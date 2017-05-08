@@ -1,0 +1,57 @@
+let pitch = 0
+let roll = 0
+basic.forever(() => {
+    roll = input.rotation(Rotation.Pitch)
+    pitch = input.rotation(Rotation.Roll)
+    if (roll == 0 && pitch == 0) {
+        basic.showLeds(`
+            . . . . .
+            . . # . .
+            . # # # .
+            . . # . .
+            . . . . .
+            `)
+    } else {
+        if (pitch < 0 && roll > 0) {
+            basic.showLeds(`
+                . . . . .
+                . . . . .
+                # . . . .
+                # . . . .
+                . # # . .
+                `)
+        } else {
+            if (pitch > 0 && roll < 0) {
+                basic.showLeds(`
+                    . . # # .
+                    . . . . #
+                    . . . . #
+                    . . . . .
+                    . . . . .
+                    `)
+            } else {
+                if (pitch < 0 && roll < 0) {
+                    basic.showLeds(`
+                        . # # . .
+                        # . . . .
+                        # . . . .
+                        . . . . .
+                        . . . . .
+                        `)
+                } else {
+                    if (pitch > 0 && roll > 0) {
+                        basic.showLeds(`
+                            . . . . .
+                            . . . . .
+                            . . . . #
+                            . . . . #
+                            . . # # .
+                            `)
+                    } else {
+
+                    }
+                }
+            }
+        }
+    }
+})
