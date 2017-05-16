@@ -3,13 +3,13 @@
 
 int main() {
 
-	uint8_t ac = 9;
-	uint8_t time = 201;
+	uint8_t ac = 8;
+	uint8_t time = 120;
 	uint8_t out;
 
 	if (ac % 4 == 0 && time <= 200){
 
-        out = 1;
+        out = 0b100;
         printf("%d", out);
         }
 
@@ -17,12 +17,12 @@ int main() {
 
             if (ac % 4 == 0 && time > 200){
 
-            out = 2;
+            out = 0b010;
             printf("%d", out);
             }
 
 	else {
-        out = 3;
+        out = 0b001;
         printf("%d", out);
 	}
 	// if ac is dividable by 4
