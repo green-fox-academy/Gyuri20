@@ -268,7 +268,7 @@ void led_matrix_waterfall_thread(void const *argument)
 				led_matrix_set(r, c, 1);
 				// wait for message
 				event = osMessageGet(adc_message_q_id, osWaitForever);
-				osDelay(ref);
+				osDelay(event.value.v / 41);
 				led_matrix_set(r, c, 0);
 			}
 		}
